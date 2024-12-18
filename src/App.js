@@ -7,7 +7,11 @@ function App() {
   return (
     <div
       className="App"
-      style={{ position: "absolute", top: "50%", right: "50%" }}
+      style={{
+        position: "absolute",
+        top: "50%",
+        right: "50%",
+      }}
     >
       <RadarApp />
     </div>

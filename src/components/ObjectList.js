@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/ObjectList.css";
 
 function ObjectList({ objects }) {
   return (
@@ -7,10 +8,9 @@ function ObjectList({ objects }) {
       {objects.length > 0 ? (
         <ul>
           {objects.map((object, index) => (
-            <li key={index}>
-              Object {index + 1} → Angle: {object.angle}°, X: {object.coorX}, Y:{" "}
-              {object.coorY}, Distance:
-              {object.distance}m
+            <li key={index} className="object-item">
+              <strong>Object {index + 1} →</strong> Angle: {object.angle}°, X:{" "}
+              {object.coorX}, Y: {object.coorY}, Distance: {object.distance}m
             </li>
           ))}
         </ul>
