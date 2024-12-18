@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### RUN DOCKER FILE
+
+docker build -t signal-eye .
+
+docker run -p 80:80 signal-eye
+
+Your app should now be accessible in the browser at http://localhost.
