@@ -1,78 +1,84 @@
-# Getting Started with Create React App
+# Signal-Eye: Radar Signal Processing Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Signal-Eye** is a radar signal processing visualizer built with **React** that simulates the appearance of detected targets based on distance and angle input. It displays how radar targets would look on a radar screen with a radius of 100 meters, giving users an interactive and educational experience in radar signal processing.
 
-## Available Scripts
+## Significance of the Application
 
-In the project directory, you can run:
+Radar systems are integral to many fields, including **defense**, **aviation**, **weather monitoring**, and **robotics**. Radar signal processing is used to detect objects, measure distances, and calculate velocities, making it essential in navigation, surveillance, and even self-driving vehicles. Signal-Eye aims to offer an easy-to-use visualization tool for understanding how radar signals and detected objects are represented on a radar screen.
 
-### `npm start`
+**Key Features:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive Radar Visualization**: Simulates the radar display based on input distance and angle.
+- **Educational Tool**: Helps users visualize radar signal processing, including how distance and angle affect the radar output.
+- **Simple Input**: Users input distance (meters) and angle (degrees) of objects, and the app generates corresponding radar points.
+- **Real-Time Simulation**: Updates dynamically with each new input for instant feedback on radar detections.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **Frontend**: React.js
+- **Visualization**: HTML5 Canvas, React State Management
+- **Containerization**: Docker
+- **Deployment**: Localhost (can be deployed to cloud platforms like AWS, Azure, or Heroku)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the Application
 
-### `npm run build`
+To run the **Signal-Eye** application on your local machine, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you haven’t already cloned the repository to your local machine, run the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone <your-repository-url>
+cd signal-eye
+```
 
-### `npm run eject`
+### 2. Docker Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Signal-Eye uses Docker to containerize the application, making it easy to deploy and run on any system with Docker installed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### RUN DOCKER FILE
+#### Building the Docker Image
 
 docker build -t signal-eye .
 
+This command will build the Docker image and tag it as signal-eye.
+
+#### Running the Application in Docker
+
 docker run -p 80:80 signal-eye
 
-Your app should now be accessible in the browser at http://localhost.
+This command runs the Docker container, maps port 80 on your local machine to port 80 on the container, and makes the application accessible in your browser.
+
+### Accessing the Application
+
+Once the container is running, open a browser and visit:
+
+http://localhost
+
+## How It Works
+
+### Input Parameters:
+
+- **Distance** (in meters): The range at which the target is detected.
+- **Angle** (in degrees): The direction at which the target is located relative to the radar.
+
+### Radar Simulation:
+
+- The radar's **radius** is set to 100 meters, meaning all targets within this radius will be shown on the radar screen.
+- As you input the distance and angle, the application calculates the target's position and updates the radar display.
+
+### Radar Display:
+
+- The target will appear as a point on the radar screen, and the radar will simulate a typical sweep motion (showing how it scans for objects).
+- The radar system updates the displayed targets in real-time as new inputs are provided.
+
+## Future Enhancements
+
+- **Noise Simulation**: Simulate signal interference or errors to create more realistic radar conditions.
+- **Multi-Target Tracking**: Handle multiple targets simultaneously and display them with different identifiers.
+- **Doppler Effect Visualization**: Visualize how velocity can be detected based on the Doppler shift in the radar signal.
+- **Radar Sweep Simulation**: Simulate a full radar sweep with animation to show how the radar scans its environment.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
