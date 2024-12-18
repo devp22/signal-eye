@@ -79,8 +79,4 @@ http://localhost
 - **Doppler Effect Visualization**: Visualize how velocity can be detected based on the Doppler shift in the radar signal.
 - **Radar Sweep Simulation**: Simulate a full radar sweep with animation to show how the radar scans its environment.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ![alt text](image.png)
